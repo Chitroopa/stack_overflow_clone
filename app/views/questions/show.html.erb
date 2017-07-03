@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h2 class="product-header"> <%= @question.title %></h2>
+  <p><%= @question.content %></p>
+  <h5>Asked by: <%= @question.user.email %></h5>
+  <h6>
+  </h6>
+</div>
+
+<h1>Questions</h1>
+<% if @question.answers.any?() %>
+  <% @question.answers.each do |answer| %>
+    <div class="card well well-bg">
+      <div class="card-block">
+        <h4 class="card-title"><%= answer.answer %></h4>
+        <p class="card-text">
+          <%= answer.user.email %>
+        </p>
+        <p>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h4>No answers Yet</h4>
+<% end %>

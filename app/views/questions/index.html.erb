@@ -1,0 +1,21 @@
+<h1>Questions</h1>
+<a href="/questions/new" class="btn btn-primary">Click to add a question!</a>
+
+<% if @questions.any?() %>
+  <% @questions.each do |question| %>
+    <div class="card well well-bg">
+      <div class="card-block">
+        <h4 class="card-title"><%= question.title %></h4>
+        <p class="card-text">
+          <%= question.content %>
+        </p>
+        <p>
+          <%= question.user.email %>
+        </p>
+        <p><%= link_to "See details and reviews", question_path(question) %></p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h4>No questions Yet</h4>
+<% end %>

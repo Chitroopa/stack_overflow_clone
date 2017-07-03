@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @question %>
+
+<%= form_for @question do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :content %><br>
+  <%= f.text_field :content %><br>
+  <%= f.label :tags %><br>
+  <%= f.text_field :tags %><br><br>
+  <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+<% end %>
